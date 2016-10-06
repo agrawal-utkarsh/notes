@@ -8,7 +8,40 @@ error control (sequence no and acknowledgement number)
 congestion control
 connectionless and connection-oriented services (independency and dependency between packets respectively)
 
-Transport Layer Protocols
+Transport Layer Protocols (by combining the above services)->
+
+simple protocol
+(connection less protocol)
+(receiver can handle any packet it receives;no error and flow control)
+(UDP is a slight modification of this protocol)
+
+stop and wait protocol
+(connection oriented protocol)
+(flow control (window size of 1 on both sender and receiver sides) and error control (checksum,timer,sequence number and acknowledgement functionality))
+(1 bit assigned for sequence number ie modulo 2 arithmetic)
+(acknowledgement received corresponds to next expected packet)
+(very inefficient method in cases of large bandwidth delay product)
+
+go-back-n protocol
+(uses pipelining ie sends multiple packets at once without waiting for acknowledgement)
+(receiver window size is 1 only)
+(acknowledgement received is cumulative and next expected packet is mentioned in acknowmledgement)
+(sender window size is 2^m-1 where m is the no of bits allocated for sequence numbers)
+(so the sequence numbers are 2^m while sender window size is 1 less)
+(only one universal timer is present which when expires results in sending of n number of packets again)
+(still inefficient protocol)
+
+selective repeat protocol
+(resend only those packets that have actually been lost (unlike GBN where packets recieved out of order too are resent))
+(sender and receiver window size is same and is equal to 2^(m-1) ie half the no of sequence numbers)
+(same window size is proposed as it enables to store all the sent packets even if they arrive out of order and so the remaining packets can be identified and requested again)
+(theoretically one timer is allocated for one packet but practically one timer is allocated for all packets)
+(acknowledgement received is only for those packets that have arrived safe and sound; no cumulative no nothing)
+(even though SR stores out of order packets it(and all the other protocols too) can only send those packets to application layer IN ORDER)
+
+bidirectional protocols(piggybacking)
+()
+
 
 
 now TCP and UDP (in which we combine the above learnt protocols)
