@@ -1,0 +1,14 @@
+services offered by transport layer->
+
+process to process communication
+encapsulation and decapsulation
+multiplexing and demultiplexing 
+flow control (we cant afford to lose data while pushing from consumer to produer so they need to communicate)
+error control (sequence no and acknowledgement number)
+congestion control
+connectionless and connection-oriented services (independency and dependency between packets respectively)
+
+Transport Layer Protocols
+
+
+now TCP and UDP (in which we combine the above learnt protocols)
