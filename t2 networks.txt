@@ -57,6 +57,6 @@ UDP->
 (checcksum contains pseudoheader,header,data)
 (checksum calculation methodology)
 (all 0's are converted to all 1's;all 1's not possible;no calculation means all 0's)
-(only diff bw udp and dimple protocol is the inclusion of checksum in udp)
+(only diff bw udp and simple protocol is the inclusion of checksum in udp)
 (for services using long messages or where quick reply is needed udp loses and tcp wins)
 (but udp has several advantages too)
