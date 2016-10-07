@@ -40,8 +40,23 @@ selective repeat protocol
 (even though SR stores out of order packets it(and all the other protocols too) can only send those packets to application layer IN ORDER)
 
 bidirectional protocols(piggybacking)
-()
-
+(each protocol discussed above can be implemented in both directions by using 2 windows on each side)
+(the data when sent can along with it take acknowledgement of previously received packet caled as piggybacking)
 
 
 now TCP and UDP (in which we combine the above learnt protocols)
+
+UDP->
+(host to host communication is provided,encapsulation decapsulation multiplexing demultiplexing is provided)
+(error control via checksum (silently drops the corrupted packet,no acknowledgement is provided))
+(no flow control,no congestion control)
+(connectionless,unreliable protocol)
+(8 byte is size of udp header)
+(udp can only send messages if they fit into a datagram (2^16 bits) ie it doesnt chop the message into pieces)
+(protocol field for udp is "17")
+(checcksum contains pseudoheader,header,data)
+(checksum calculation methodology)
+(all 0's are converted to all 1's;all 1's not possible;no calculation means all 0's)
+(only diff bw udp and dimple protocol is the inclusion of checksum in udp)
+(for services using long messages or where quick reply is needed udp loses and tcp wins)
+(but udp has several advantages too)
