@@ -60,3 +60,14 @@ UDP->
 (only diff bw udp and simple protocol is the inclusion of checksum in udp)
 (for services using long messages or where quick reply is needed udp loses and tcp wins)
 (but udp has several advantages too)
+
+TCP->
+(process to process communication,stream oriented protocol(udp sends discrete packets while tcp sends a wave))
+
+connection establiahment->
+(a syn segment consumes 1 seq no)
+(a (ack+syn) segment consumes 1 seq no)
+(a ack segment with no data consumes 0 seq no)
+(a ack segment with data consumes seq no)
+data transfer->
+connection teermination
