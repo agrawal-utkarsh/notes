@@ -1,0 +1,58 @@
+flow control
+error control
+congestion control
+
+as is likely; fucking overhead in tcp
+
+WINDOWS IN TCPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+send and receive window
+send window->open,close,shrink
+send window similar to sr window but byte numbering,sending as soon as received and only one timer(used in error control)
+
+
+receive window->open,close
+receiver window similar to sr window but ((rwnd = buffer size − number of waiting bytes to be pulled)) and cumulative ack
+
+FLOW COONTROL-----
+  
+To achieve flow control, TCP forces the sender and the receiver to adjust their window
+sizes, although the size of the buffer for both parties is fixed when the connection is
+established. The receive window closes (moves its left wall to the right) when more
+bytes arrive from the sender; it opens (moves its right wal l to the right) when more
+bytes are pulled by the process. We assume that it does not shrink (the right wall does
+not move to the left).
+The opening, closing, and shrinking of the send window is controlled by the
+receiver. The send window closes (moves its left wall to the right) when a new
+acknowledgement allows it to do so. The send window opens (its right wall moves to
+the right) when the receive window size (rwnd) advertised by the receiver allows it to
+do so. The send window shrinks on occasion. We assume that this situation does not
+occur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ERROR CONTROL->
+there is a solution for everything,
+
+remedy are checksum,ack,timeout
+
+
+
+retransmission->timer expiration or three duplicate acknowledgements
+
+
+CONGESTION CONTROL->
+
