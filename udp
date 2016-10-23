@@ -1,0 +1,3 @@
+no flow control
+error control(checksum only; no ack,no timer expiration)
+no congestion control
